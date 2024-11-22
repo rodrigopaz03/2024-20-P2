@@ -20,5 +20,7 @@ export class TrainerService {
     const url = `${this.trainerDetailBaseUrl}${id}/trainers.json`;
     return this.http.get<Trainer>(url);
   }
+
+  
 }
 

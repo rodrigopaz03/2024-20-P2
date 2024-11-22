@@ -1,8 +1,40 @@
-<div class="trainer-detail">
-  <h2>{{ trainerDetail.name }}</h2>
-  <img [src]="trainerDetail.imageUrl" [alt]="trainerDetail.name" />
-  <p><strong>Age:</strong> {{ trainerDetail.age }}</p>
-  <p><strong>About...</strong> {{ trainerDetail.bigSnopsies }}</p>
-  <p><strong>Pokemons:</strong></p>
-  <app-pokemon-list [pokemonList]="trainerDetail.pokemons"></app-pokemon-list>
+<div class="container-fluid">
+  <p class="h3 p-3">{{ trainerDetail.name }}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ trainerDetail.imageUrl }}"
+          alt="{{ trainerDetail.name }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+        <dt>Age</dt>
+        <dd>{{ trainerDetail.age }}</dd>
+
+        <hr />
+
+        <dt>Small Synopsis</dt>
+        <dd>{{ trainerDetail.smallSnopsies }}</dd>
+
+        <hr />
+
+        <dt>Big Synopsis</dt>
+        <dd>{{ trainerDetail.bigSnopsies }}</dd>
+
+        <hr />
+
+        <dt class="bold">Pokémon Team</dt>
+        <dd *ngFor="let pokemon of trainerDetail.pokemons">
+          <a routerLink="/pokemons/{{ pokemon.id }}">
+            {{ pokemon.name }} (Type: {{ pokemon.type }})
+          </a>
+        </dd>
+      </dl>
+    </div>
+  </div>
 </div>
+
