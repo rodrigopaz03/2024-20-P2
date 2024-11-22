@@ -7,7 +7,8 @@ import { Trainer } from '../Trainer';
   styleUrls: ['./trainer-detail.component.css'],
 })
 export class TrainerDetailComponent implements OnInit {
-  @Input() trainerDetail!: Trainer;
+  @Input() trainerDetail!: Trainer; 
+
   constructor() {}
 
   ngOnInit() {}

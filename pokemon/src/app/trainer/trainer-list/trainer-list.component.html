@@ -1,16 +1,14 @@
 <div>
   <div>
     <div *ngIf="selected">
-      <app-trainer-detail
-        [trainerDetail]="selectedTrainer"
-      ></app-trainer-detail>
+      <app-trainer-detail [trainerDetail]="selectedTrainer"></app-trainer-detail>
     </div>
     <table>
       <thead>
         <tr>
-          <th class="h4">Trainers's Name</th>
+          <th class="h4">Trainer's Name</th>
           <th class="h4">Trainer's Image</th>
-          <th class="h4">Trainer's Samll snapshot</th>
+          <th class="h4">Trainer's Small Snapshot</th>
         </tr>
       </thead>
       <tbody>
